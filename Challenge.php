@@ -32,6 +32,6 @@ namespace wbs;
  */
 
 // If you agree to the rules, set $iAccept = true;
-$iAccept = false;
+$iAccept = true;
 
 return $iAccept;
