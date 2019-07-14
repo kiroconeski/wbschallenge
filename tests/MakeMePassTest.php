@@ -1,6 +1,7 @@
 <?php declare(strict_types=1);
 
 namespace wbs\tests;
+require __DIR__ . '/vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 
