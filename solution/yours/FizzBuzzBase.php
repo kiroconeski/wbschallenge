@@ -119,7 +119,9 @@ abstract class FizzBuzzBase
     }
 
     /**
-     * Register alteration to the $alterations array.
+     * Register alteration to the $alterations array. Every alteration will be run against
+     * the number's representation. The alterations are 'chained' i.e. every alteration
+     * picks up the result from the previous alteration defined in the array, and alteres it.
      * @access protected
      * @param int $divider The divider to check if the number is divisivle by
      * @param int $replacementWord The word that shoud be printed if the number is divisible by the divider
@@ -127,7 +129,7 @@ abstract class FizzBuzzBase
      */
     protected function registerAlteration(int $divider, string $replacementWord)
     {
-        array_push($this->alterations, function(string & $representation, int $number) use ($divider, $replacementWord){
+        array_push($this->alterations, function(string & $representation, int $number) use ($divider, $replacementWord) {
             if ($number % $divider === 0) {
                 $representation .= $replacementWord;
             }
